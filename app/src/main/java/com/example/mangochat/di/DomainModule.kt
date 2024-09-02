@@ -1,8 +1,11 @@
 package com.example.mangochat.di
 
 import com.example.domain.repository.AuthRepository
+import com.example.domain.repository.ChatRepository
 import com.example.domain.repository.ProfileRepository
 import com.example.domain.usecase.CheckCodeUseCase
+import com.example.domain.usecase.GetChatDetailUseCase
+import com.example.domain.usecase.GetChatListUseCase
 import com.example.domain.usecase.GetProfileInfoUseCase
 import com.example.domain.usecase.RegisterUserUseCase
 import com.example.domain.usecase.UpdateProfileInfoUseCase
@@ -25,4 +28,10 @@ class DomainModule {
 
     @Provides
     fun provideUpdateProfileInfoUseCase(profileRepository: ProfileRepository) = UpdateProfileInfoUseCase(profileRepository)
+
+    @Provides
+    fun provideGetChatListUseCase(chatRepository: ChatRepository) = GetChatListUseCase(chatRepository)
+
+    @Provides
+    fun provideGetChatDetailUseCase(chatRepository: ChatRepository) = GetChatDetailUseCase(chatRepository)
 }

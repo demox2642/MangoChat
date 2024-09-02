@@ -92,6 +92,7 @@ val showNavBar =
 fun MainContent() {
     val navController = rememberNavController()
     Scaffold(
+        backgroundColor = AppTheme.colors.systemBackgroundPrimary,
         bottomBar = { BottomNav(navController) },
     ) { innerPadding ->
         NavHost(

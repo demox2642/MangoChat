@@ -34,7 +34,9 @@ android {
 }
 
 dependencies {
-
+    implementation(project(Modules.Base.DATA))
+    implementation(project(Modules.Base.DOMAIN))
+    implementation(project(Modules.Chat.DOMAIN))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

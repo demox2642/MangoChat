@@ -47,7 +47,10 @@ fun RegistrationScreen(
     val screenState by viewModel.screenState.collectAsState()
     val errorText by viewModel.errorText.collectAsState()
 
-    Scaffold(modifier = Modifier.padding(16.dp)) { padding ->
+    Scaffold(
+        modifier = Modifier.padding(16.dp),
+        containerColor = AppTheme.colors.systemBackgroundPrimary,
+    ) { padding ->
         Column(
             modifier =
                 Modifier

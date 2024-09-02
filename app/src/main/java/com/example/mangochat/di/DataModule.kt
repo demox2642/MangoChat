@@ -2,10 +2,12 @@ package com.example.mangochat.di
 import com.example.data.api.ProfileApi
 import com.example.data.pref.Preferences
 import com.example.data.repository.AuthRepositoryImpl
+import com.example.data.repository.ChatRepositoryImpl
 import com.example.data.repository.ProfileRepositoryImpl
 import com.example.data.repository.TokenRepositoryImpl
 import com.example.data.services.AuthApi
 import com.example.domain.repository.AuthRepository
+import com.example.domain.repository.ChatRepository
 import com.example.domain.repository.ProfileRepository
 import com.example.domain.repository.TokenRepository
 import com.example.domain.usecase.CleanTokensUseCase
@@ -118,6 +120,10 @@ class DataModule {
     @Singleton
     @Provides
     fun provideProfileRepository(profileApi: ProfileApi): ProfileRepository = ProfileRepositoryImpl(profileApi)
+
+    @Singleton
+    @Provides
+    fun provideChatRepository(): ChatRepository = ChatRepositoryImpl()
 
     @Provides
     fun provideSendPhoneUseCase(authRepository: AuthRepository) = SendPhoneUseCase(authRepository)

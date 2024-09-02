@@ -14,11 +14,12 @@ sealed class BottomNavScreens(
     @DrawableRes val icon: Int,
     @StringRes val nameId: Int,
 ) {
-    object Chat:BottomNavScreens("chat_screen", R.drawable.ic_chat, R.string.chat)
-    object Profile:BottomNavScreens("profile_screen", R.drawable.ic_user, R.string.profile)
+    object Chat : BottomNavScreens("chat_screen", R.drawable.ic_chat, R.string.chat)
+
+    object Profile : BottomNavScreens("profile_screen", R.drawable.ic_user, R.string.profile)
 }
 
-fun NavGraphBuilder.bottomNavScreen(navController: NavHostController){
-    composable(BottomNavScreens.Chat.route){ ChatScreen() }
-    composable(BottomNavScreens.Profile.route){ ProfileScreen() }
+fun NavGraphBuilder.bottomNavScreen(navController: NavHostController)  {
+    composable(BottomNavScreens.Chat.route) { ChatScreen(navController) }
+    composable(BottomNavScreens.Profile.route) { ProfileScreen() }
 }

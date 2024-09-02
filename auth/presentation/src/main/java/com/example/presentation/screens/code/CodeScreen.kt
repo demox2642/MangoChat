@@ -50,7 +50,10 @@ fun CodeScreen(
     val errorText by viewModel.errorText.collectAsState()
 val code = rememberSaveable { mutableStateOf("") }
 
-    Scaffold(modifier = Modifier.padding(16.dp)) { padding ->
+    Scaffold(
+        modifier = Modifier.padding(16.dp),
+        containerColor = AppTheme.colors.systemBackgroundPrimary
+        ) { padding ->
         Column(
             modifier =
             Modifier

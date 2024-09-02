@@ -39,19 +39,30 @@ android {
     buildFeatures {
         compose = true
     }
-//    composeOptions {
-//        kotlinCompilerExtensionVersion = "2.0.0"
-//    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.5"
+    }
 }
 
 dependencies {
-
-    implementation("androidx.compose.material:material:1.6.8")
+    implementation(project(Modules.Base.PRESENTATION))
+    implementation(project(Modules.Base.DOMAIN))
+    implementation(project(Modules.Chat.DOMAIN))
+    implementation(project(Modules.Chat.DATA))
     implementation(libs.androidx.ui.tooling.preview)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+
     // navigation
     implementation(libs.androidx.navigation.compose)
 
     // hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.material3)
+
+    implementation(libs.compose)
+    implementation(libs.accompanist.permissions)
 }

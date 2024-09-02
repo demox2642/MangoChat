@@ -69,6 +69,7 @@ fun ProfileScreen() {
     val confirmDialog = remember { mutableStateOf(false) }
 
     Scaffold(
+        containerColor = AppTheme.colors.systemBackgroundPrimary,
         modifier = Modifier.padding(16.dp),
         topBar = {
             if (screenState == ScreenState.SUCCESS) {
@@ -77,10 +78,18 @@ fun ProfileScreen() {
                     horizontalArrangement = Arrangement.End,
                 ) {
                     if (canEditState) {
-                        Icon(painterResource(id = R.drawable.ic_save), contentDescription = "edit")
+                        Icon(
+                            painterResource(id = R.drawable.ic_save),
+                            contentDescription = "edit",
+                            tint = AppTheme.colors.systemTextPrimary,
+                        )
                     } else {
                         IconButton(onClick = viewModel::changeEdit) {
-                            Icon(Icons.Default.Edit, contentDescription = "edit")
+                            Icon(
+                                Icons.Default.Edit,
+                                contentDescription = "edit",
+                                tint = AppTheme.colors.systemTextPrimary,
+                            )
                         }
                     }
                 }
@@ -181,9 +190,9 @@ fun ProfileContent(
             )
         }
         Column {
-            Text(text = "username:${userInfo?.username}")
+            Text(text = "username: ${userInfo?.username}", style = AppTheme.typography.h3, color = AppTheme.colors.systemTextPrimary)
             Spacer(modifier = Modifier.height(12.dp))
-            Text(text = "phone:${userInfo?.phone}")
+            Text(text = "phone: ${userInfo?.phone}", style = AppTheme.typography.h3, color = AppTheme.colors.systemTextPrimary)
         }
     }
     Spacer(modifier = Modifier.height(20.dp))

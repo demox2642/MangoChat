@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="send_phone">send phone</string>
+    <string name="send_code">send code</string>
+    <string name="code_screen_totle">Enter code</string>
+    <string name="user_name">Enter yor name:</string>
+    <string name="user_login">Enter login:</string>
+    <string name="create_user">create user</string>
+</resources>
